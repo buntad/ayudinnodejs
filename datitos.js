@@ -1,15 +1,22 @@
 var express = require('express')
 var router = express.Router()
+var id = Math.floor(Math.random() * 1000000) + 1;
+
+var urlAyudin = {
+	url:"luchito.com", 
+	tag:"procastinacion",
+	rank:"1"
+	};
 
 router.get('/', function (req, res) {
   res.send('oli homepage')
 })
 // define the about route
 router.get('/about', function (req, res) {
-  res.send('about oli')
+  res.send(urlAyudin)
 })
 router.get('/:type/:value', function (req, res) {
-  res.send( req.params.type + ' mas ' + req.params.value)
+  res.send( 'Buenos Dias' req.params.type  + req.params.value)
 })
 
 router.post('/', function (req, res) {
