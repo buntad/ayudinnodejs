@@ -13,12 +13,16 @@ router.get('/', function (req, res) {
 })
 // define the about route
 router.get('/about', function (req, res) {
+  res.status(200);
   res.send(urlAyudin)
 })
 router.get('/:type/:value', function (req, res) {
-  res.send( 'Buenos Dias' + req.params.type  + req.params.value)
+  res.send( 'Buenos Dias ' + req.params.type + ' ' + req.params.value)
 })
-
+router.get('/error', function (req, res) {
+  res.status(400);
+  res.json({message: "Bad Request", value:req.params.type});
+})
 router.post('/', function (req, res) {
   res.send('Got a POST request')
 })
