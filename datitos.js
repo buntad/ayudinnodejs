@@ -16,7 +16,7 @@ router.get('/about', function (req, res) {
   res.send(urlAyudin)
 })
 router.get('/:type/:value', function (req, res) {
-  res.send( 'Buenos Dias' req.params.type  + req.params.value)
+  res.send( 'Buenos Dias' + req.params.type  + req.params.value)
 })
 
 router.post('/', function (req, res) {
