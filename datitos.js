@@ -14,6 +14,8 @@ router.get('/', function (req, res) {
 // define the about route
 router.get('/about', function (req, res) {
   res.status(200);
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.send(urlAyudin)
 })
 router.get('/:type/:value', function (req, res) {
