@@ -14,19 +14,13 @@ router.get('/', function (req, res) {
 // define the about route
 router.get('/about', function (req, res) {
   res.status(200);
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.send(urlAyudin)
 })
 router.get('/:type/:value', function (req, res) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.send( 'Buenos Dias ' + req.params.type + ' ' + req.params.value)
+ res.send( 'Buenos Dias ' + req.params.type + ' ' + req.params.value)
 })
 router.get('/error', function (req, res) {
   res.status(400);
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.json({message: "Bad Request", value:req.params.type});
 })
 router.post('/', function (req, res) {
