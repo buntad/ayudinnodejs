@@ -19,10 +19,14 @@ router.get('/about', function (req, res) {
   res.send(urlAyudin)
 })
 router.get('/:type/:value', function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.send( 'Buenos Dias ' + req.params.type + ' ' + req.params.value)
 })
 router.get('/error', function (req, res) {
   res.status(400);
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.json({message: "Bad Request", value:req.params.type});
 })
 router.post('/', function (req, res) {
